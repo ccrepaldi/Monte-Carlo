@@ -1,0 +1,18 @@
++--------------------------------------------------+
+|   NUMBER OF RANDOM NUM:                          |
+|                            1000000               |
+|   NUMBER OF BINS:                                |
+|                            60                    |
+|   DEGREES OF FREEDOM:                            |
+|                            59                    |
+|   EXPECTED VALUE:                                |
+|                             16666.666            |
+|   CHI-SQUARED MEAN:                              |
+|                                58.684            |
+|   CHI-SQUARED MEDIAN:                            |
+|                                57.784            |
+|   LOWER ONE-SIDED:                               |
+|                            <     41.972          |
+|   UPPER ONE-SIDED:                               |
+|                            >     78.710          |
++--------------------------------------------------+
