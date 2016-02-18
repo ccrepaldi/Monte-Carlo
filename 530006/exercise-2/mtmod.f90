@@ -1,13 +1,13 @@
 module mtmod ! source: http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/VERSIONS/FORTRAN/mtfort90.f
 ! Fortran translation by Hiroshi Takano.  Jan. 13, 1999.
 ! Default seed
-    integer, parameter :: defaultsd = 4357
+    integer, private, parameter :: defaultsd = 4357
 ! Period parameters
-    integer, parameter :: N = 624, N1 = N + 1
+    integer, private, parameter :: N = 624, N1 = N + 1
 
 ! the array for the state vector
-    integer, save, dimension(0:N-1) :: mt
-    integer, save                   :: mti = N1
+    integer, private,  save, dimension(0:N-1) :: mt
+    integer, private, save                   :: mti = N1
     
 ! Overload procedures for saving and getting mt state
     interface mtsave
