@@ -3,8 +3,7 @@ program main
   implicit none
   integer, parameter :: dp = selected_real_kind(15, 307)
   real(dp) :: r(10)
-  integer :: grid_size
-  integer, parameter :: ninterval=4
+  integer :: grid_size, ninterval
   real, parameter :: box=1.0
   integer :: vector_size
   real(dp), parameter :: I_exact=0.7034804524336
@@ -65,6 +64,7 @@ program main
      !sigma=Ve*sqrt(count-1.0*count**2/vector_size)/vector_size
      dI=abs(I_exact-V)
      print '(a, T8,i0,T18,e20.13)', 'HM', vector_size, dI
+     write(41,*) vector_size, dI
 
      ! *********************************************************
 
@@ -87,6 +87,7 @@ program main
      !sigma=Ve*sqrt((f2mean-fmean**2)/count)
      dI=abs(I_exact-V)
      print '(a, T8,i0,T18,e20.13)', 'DS', vector_size, dI
+     write(42,*) vector_size, dI
 
      call init_method()
 
@@ -112,6 +113,7 @@ program main
      V=Ve*fmean
      !sigma=Ve*sqrt((f2mean-fmean**2)/count)
      print '(a, T8,i0,T18,e20.13)', 'SS',vector_size, dI
+     write(43,*) vector_size, dI
 
      call init_method()
 
@@ -122,8 +124,9 @@ program main
      call init_method()
 
      my_base=11
+     grid_size=100
 
-     grid_size=vector_size/ninterval
+     ninterval=vector_size/grid_size
      
      do j=1,ninterval
         do i=1,grid_size
@@ -140,6 +143,7 @@ program main
      dI=abs(I_exact-V)
      !sigma=Ve*sqrt((f2mean-fmean**2)/count)
      print '(a, T8,i0,T18,e20.13)', 'PSS',vector_size, dI
+     write(44,*) vector_size, dI
 
      ! *********************************************************
 
@@ -160,8 +164,11 @@ program main
      dI=abs(I_exact-V)
      !sigma=Ve*sqrt((f2mean-fmean**2)/count)
      print '(a, T8,i0,T18,e20.13)', 'IS',vector_size, dI
+     write(45,*) vector_size, dI
 
      vector_size=vector_size*10
+
+     if (vector_size.le.1e6) print "(38('-'))"
 
   end do
 
