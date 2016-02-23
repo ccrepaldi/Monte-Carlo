@@ -44,13 +44,11 @@ program main
 
   do i=1,Nd
      do j=1,Nc
-
-  print *, xm_true, Fk
-
+     end do
+  end do
   
 
-
-contains
+  print *, xm_true, Fk
 
 
 end program main
