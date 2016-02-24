@@ -42,7 +42,7 @@ program main
 
      x=0.001d0 ! some value, so that f(x)>0
      !dx=0.01d0
-     dx=0.1d0 ! optimal value (tested for 1000 points)
+     dx=0.1d0 ! optimal value (tested for 10000 points)
      p=f(x)
 
      N=0
