@@ -6,6 +6,7 @@ program main
   integer :: i,j,k,ios
   real(dp), dimension(Nf) :: x,y
   real(dp) :: xm_true,xmean,dxm,u,Fk(Nf),means(Nd),hj(Nh),Hk(Nh),xl,xu
+  real(dp) :: stdv, stdm
   integer :: Dk(Nf)
 
   ! Read the data ****************************************
@@ -37,6 +38,16 @@ program main
      xm_true=xm_true+x(i)*y(i)
   end do
   xm_true=xm_true/sum(y) ! get the true mean of the distribution
+
+  stdv=0.d0
+
+  do i=1,Nf
+     stdv=stdv+y(i)*(xm_true-x(i))**2
+  end do
+  stdv=stdv/(sum(y)-1)
+  stdv=sqrt(stdv)
+
+  stdm=stdv/sqrt(sum(y))
 
   !print *, xm_true
 
@@ -109,6 +120,8 @@ program main
 
   print *, trim("Lower bound uncertainty: "), abs(xm_true-xl)
   print *, trim("Upper bound uncertainty: "), abs(xm_true-xu)
+
+  print *, trim("Gaussian distr., Std. deviation of the mean: "), stdm
 
 
 end program main
