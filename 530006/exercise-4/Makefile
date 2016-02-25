@@ -2,12 +2,15 @@
 
 .PHONY: all clean
 
-all: ex4p1 ex4p2
+all: ex4p1 ex4p2 ex4p2b
 
 ex4p1: mtmod.o ex4p1.o
 	gfortran -o $@ $^
 
 ex4p2: mtmod.o ex4p2.o
+	gfortran -o $@ $^
+
+ex4p2b: mtmod.o ex4p2b.o
 	gfortran -o $@ $^
 
 %.o: %.f90
