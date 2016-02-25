@@ -56,7 +56,7 @@ program main
   !   print *, Fk(i)
   !end do
 
-  dxm=0.1d0
+  dxm=0.001d0
   hj(:)=0.d0
   do i=1,Nd
      Dk(:)=0.d0
