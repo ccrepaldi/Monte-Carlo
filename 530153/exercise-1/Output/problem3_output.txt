@@ -1,0 +1,22 @@
+ drunkensailor: 2-dimensional Random Walk
+ Usage: drunkensailor N nwalks wind [seed]
+ The argument [ARGUMENT] is optional.
+ Note: wind can be 0 (no wind), 1 (west wind) or 2 (east wind).
+$ ./ex1p3 1000000 1000 0
+ drunkensailor: 2-dimensional Random Walk
+ Doing random walk to     1000000 steps        1000  times
+ Failures          18
+ <t>   17200.0449     min
+ median(t)   904.000000     min
+$ ./ex1p3 1000000 1000 1
+ drunkensailor: 2-dimensional Random Walk
+ Doing random walk to     1000000 steps        1000  times
+ Failures           0
+ <t>   1719.85901     min
+ median(t)   656.000000     min
+$ ./ex1p3 1000000 1000 2
+ drunkensailor: 2-dimensional Random Walk
+ Doing random walk to     1000000 steps        1000  times
+ Failures         457
+ <t>   1412.45483     min
+ median(t)   118.500000     min

@@ -19,8 +19,8 @@ program drunkensailor
   integer, parameter            :: dp=kind(1.d0)
   !real(dp), parameter           :: pi=3.1415926535897932
   integer                       :: N, nwalks, iwalk, istep, seed, failure
-  real                          :: x, y, r2, l
-  real                          :: r2sum, dir, median
+  real                          :: x, y, l
+  real                          :: dir, median
   real, allocatable             :: t(:)
   character 			:: buf*80
   integer       		:: narg, wind
@@ -57,13 +57,10 @@ program drunkensailor
   failure=0
 
   ! Random walk
-  r2sum = 0.0
   l=1.d0
   call sgrnd(seed)
   
   print *,'Doing random walk to',N,'steps',nwalks,' times'
-
-  r2sum=0.0
 
   WALK_LOOP: do iwalk=1, nwalks
 
@@ -121,7 +118,7 @@ program drunkensailor
         failure=failure+1
      end if
 
-     write(1,*) t(iwalk)
+     !write(1,*) t(iwalk)
      
   end do WALK_LOOP
 

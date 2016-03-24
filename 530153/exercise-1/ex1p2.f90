@@ -54,8 +54,6 @@ program randomwalk2d
   
   print *,'Doing random walk to',N,'steps',nwalks,' times'
 
-  r2sum=0.0
-
   WALK_LOOP: do iwalk=1, nwalks
 
      ! New walk                                                                

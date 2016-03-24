@@ -1,0 +1,4 @@
+ saw3d: 3-dimensional Self-Avoiding Random Walk
+ Simulating a polymer with          50 monomers        1000  times
+ <R^2(N)>   97.7233429     N          50
+ ni  0.585525692     +/-   1.86048448E-03
